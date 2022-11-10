@@ -10,7 +10,7 @@ const data = {
   title: "FAQ (How it works)",
   rows: [
     {
-      title: "What is Ask2Web3?",
+      title: "What is StackChain?",
       content: `It is a community-based platform that will help users find solutions to their queries. 
       Users will have the option to connect with the expert for that technology stack. Users can get
        vanity points and rewards based on their contributions.
@@ -67,7 +67,7 @@ const data = {
     },
     {
       title: "How to log in?",
-      content: `Log-In: You must create your Ask2Web3 profile and link to your Metamask account. Once you're done, you can click on the profile option and edit/customize your profile details.
+      content: `Log-In: You must create your StackChain profile and link to your Metamask account. Once you're done, you can click on the profile option and edit/customize your profile details.
       `,
     },
   ],
@@ -100,6 +100,7 @@ const Home = () => {
           <div className="landing">
             {/* <img src={Logo} className="logo" /> */}
             <div className="globe-div">
+              <img className="home2-logo" src={homelogo} />
               <HomeGlobe />
             </div>
             {/* <div className="home-logo">

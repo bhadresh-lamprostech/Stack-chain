@@ -58,7 +58,7 @@ const CryptoArticle = ({ account, mainContract }) => {
                   return (
                     <div className="fakeimg">
                       {/* src={inde[0]} */}
-                      <img className="crypto-img" src={DummyIMG} />
+                      <img className="crypto-img" src={inde[0]} />
                       <p>{inde[1]}</p>
                       <Link
                         className="all-user-link"

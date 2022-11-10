@@ -63,7 +63,7 @@ const AddQuestions = ({ mainContract, account }) => {
         name: "'" + StringTitle + "'",
         description: "'" + editorRef.current.getContent() + "'",
         file_url: "'" + Stringtags + "'",
-        body: "'" + editorRef.current.getContent() + "'"
+        body: "'" + question + "'"
       }
     };
     var questionCID;
