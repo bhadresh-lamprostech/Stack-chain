@@ -44,6 +44,7 @@ const Profile = ({ mainContract, account }) => {
     // console.log(userTags);
     setLoading(false);
     const userImage = await mainContract.getUserCID(account);
+    console.log(userImage);
     setImageUrl(userImage);
   };
 
@@ -77,7 +78,7 @@ const Profile = ({ mainContract, account }) => {
             <div className="image-outside">
               <img
                 className="user-profile-image"
-                src={useravtar}
+                src={imageUrl}
                 alt="user avatar"
                 height="50px"
                 width="50px"
@@ -126,7 +127,7 @@ const Profile = ({ mainContract, account }) => {
               >
                 Edit Profile
               </button>
-              <button onClick={() => {}}>Claim Rewards</button>
+              <button onClick={() => { }}>Claim Rewards</button>
             </div>
           </div>
           {/* </div> */}

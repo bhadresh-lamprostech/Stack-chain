@@ -61,6 +61,7 @@ export default function SingleQuestion({ account, mainContract, id }) {
 
     const addresss = question.user;
     const user = await mainContract.getUserCID(addresss);
+    console.log(user);
     setUserImage(user);
     const name = await mainContract.getUserName(addresss);
     setQName(name);
@@ -315,15 +316,15 @@ export default function SingleQuestion({ account, mainContract, id }) {
                     content_style:
                       "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
                   }}
-                  // tinymce.init({
-                  //     selector: 'textarea',  // change this value according to your HTML
-                  //     plugins: 'image',
-                  //     toolbar: 'image',
-                  //     image_list: [
-                  //       { title: 'My image 1', value: 'https://www.example.com/my1.gif' },
-                  //       { title: 'My image 2', value: 'http://www.moxiecode.com/my2.gif' }
-                  //     ]
-                  //   });
+                // tinymce.init({
+                //     selector: 'textarea',  // change this value according to your HTML
+                //     plugins: 'image',
+                //     toolbar: 'image',
+                //     image_list: [
+                //       { title: 'My image 1', value: 'https://www.example.com/my1.gif' },
+                //       { title: 'My image 2', value: 'http://www.moxiecode.com/my2.gif' }
+                //     ]
+                //   });
                 />
               </div>
 
@@ -474,15 +475,15 @@ export default function SingleQuestion({ account, mainContract, id }) {
                     content_style:
                       "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
                   }}
-                  // tinymce.init({
-                  //     selector: 'textarea',  // change this value according to your HTML
-                  //     plugins: 'image',
-                  //     toolbar: 'image',
-                  //     image_list: [
-                  //       { title: 'My image 1', value: 'https://www.example.com/my1.gif' },
-                  //       { title: 'My image 2', value: 'http://www.moxiecode.com/my2.gif' }
-                  //     ]
-                  //   });
+                // tinymce.init({
+                //     selector: 'textarea',  // change this value according to your HTML
+                //     plugins: 'image',
+                //     toolbar: 'image',
+                //     image_list: [
+                //       { title: 'My image 1', value: 'https://www.example.com/my1.gif' },
+                //       { title: 'My image 2', value: 'http://www.moxiecode.com/my2.gif' }
+                //     ]
+                //   });
                 />
               </div>
 

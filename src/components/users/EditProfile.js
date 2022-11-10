@@ -4,6 +4,7 @@ import { WithContext as ReactTags } from "react-tag-input";
 import { useEffect } from "react";
 import Upload from "../users/man.png";
 import { create, CID } from "ipfs-http-client";
+import axios from "axios";
 export default function EditProfile({
   mainContract,
   account,
@@ -67,17 +68,61 @@ export default function EditProfile({
 
   //upload image function
   async function UploadImage(e) {
-    const file = e.target.files[0];
+    // const file = e.target.files[0];
     // console.log(file);
-    setProfile_image(file);
-    try {
-      const added = await client.add(file);
-      const url = `https://ipfs.infura.io/ipfs/${added.path}`;
-      setProfile_image_url(url);
-      console.log(url);
-    } catch (error) {
-      console.log("Error uploading file: ", error);
+    // setProfile_image(file);
+    // try {
+    //   const added = await client.add(file);
+    //   const url = `https://ipfs.infura.io/ipfs/${added.path}`;
+    //   setProfile_image_url(url);
+    //   console.log(url);
+    // } catch (error) {
+    //   console.log("Error uploading file: ", error);
+    // }
+
+
+    //---------------------------------------------------------------------------------------------------------------------------//
+    e.preventDefault();
+    const nftImage = e.target.files[0];
+    setProfile_image(nftImage);
+
+    if (nftImage == undefined) {
+      alert("please select an Image");
+      return;
     }
+    console.log(nftImage);
+
+    const form = new FormData();
+    form.append("file", nftImage);
+
+    const options = {
+      method: 'POST',
+      url: 'https://api.nftport.xyz/v0/files',
+      headers: {
+        'Content-Type': 'multipart/form-data; boundary=---011000010111000001101001',
+        Authorization: '4455109c-4819-40f5-9ec5-5882af32a7ed'
+      },
+      data: form
+    };
+    console.log(options);
+
+    await axios.request(options).then(function (response) {
+      console.log(response.data);
+      console.log(response.data.ipfs_url);
+
+
+      setProfile_image_url(response.data.ipfs_url);
+    }).catch(function (error) {
+      console.error(error);
+    });
+    //--------------------------------------------------------------------------------------------//
+
+
+
+
+
+
+
   }
 
   return (
